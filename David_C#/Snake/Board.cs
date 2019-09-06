@@ -2,7 +2,7 @@
 
 namespace Snake
 {
-    class Board
+    public class Board
     {
         public int Height { get; set; }
         public int Width { get; set; }
@@ -15,12 +15,12 @@ namespace Snake
         private readonly Action<Food> _drawFood;
 
 
-        public Board(Action<Snake> drawSnakeHead, Action<Snake> removeSnakeTail, Action<Food> drawFood, Action<Board> drawBoard)
+        public Board(Action<Snake> drawSnakeHead, Action<Snake> removeSnakeTail, Action<Food> drawFood, Action<Board> drawBoard, Snake snake)
         {
             Height = 28;
             Width = 50;
 
-            _snake = new Snake();
+            _snake = snake;
             _food = new Food() { X = 7, Y = 7 };
 
             drawBoard(this);
@@ -94,9 +94,7 @@ namespace Snake
                 return false;
             }
 
-            var newHead = new Segment() { X = newX, Y = newY };
-            _snake.Head.Next = newHead;
-            _snake.Head = newHead;
+            _snake.AddNewHead(newX, newY);
             _drawSnakeHead(_snake);
 
             if (newX == _food.X && newY == _food.Y)

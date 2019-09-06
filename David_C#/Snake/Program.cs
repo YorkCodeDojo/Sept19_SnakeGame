@@ -7,7 +7,8 @@ namespace Snake
     {
         static void Main()
         {
-            var board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard);
+            var snake = new Snake(3, 3);
+            var board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard, snake);
 
             while (true)
             {

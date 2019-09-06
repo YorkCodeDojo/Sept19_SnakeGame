@@ -1,19 +1,16 @@
 ﻿namespace Snake
 {
-    class Snake
+    public class Snake
     {
         public Segment Head { get; set; }
         public Segment Tail { get; set; }
 
         public Direction Facing { get; set; }
 
-        public Snake()
+        public Snake(int x, int y)
         {
-            Tail = new Segment() { X = 5, Y = 5 };
-            Tail.Next = new Segment() { X = 6, Y = 5 };
-            Tail.Next.Next = new Segment() { X = 7, Y = 5 };
-            Tail.Next.Next.Next = new Segment() { X = 8, Y = 5 };
-            Head = Tail.Next.Next.Next;
+            Tail = new Segment() { X = x, Y = y };
+            Head = Tail;
         }
 
         public bool IsSnake(int x, int y)
@@ -28,6 +25,13 @@
             }
 
             return false;
+        }
+
+        public void AddNewHead(int x, int y)
+        {
+            var newHead = new Segment() { X = x, Y = y };
+            Head.Next = newHead;
+            Head = newHead;
         }
     }
 }
