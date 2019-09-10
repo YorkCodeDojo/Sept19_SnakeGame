@@ -6,7 +6,8 @@
 
         public MockBoard(Snake snake)
         {
-            _board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard, snake);
+            var food = new Food() { X = 7, Y = 7 };
+            _board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard, snake, food);
         }
 
         private void DrawBoard(Board obj)
