@@ -15,13 +15,13 @@ namespace Snake
         private readonly Action<Food> _drawFood;
 
 
-        public Board(Action<Snake> drawSnakeHead, Action<Snake> removeSnakeTail, Action<Food> drawFood, Action<Board> drawBoard, Snake snake)
+        public Board(Action<Snake> drawSnakeHead, Action<Snake> removeSnakeTail, Action<Food> drawFood, Action<Board> drawBoard, Snake snake, Food food)
         {
             Height = 28;
             Width = 50;
 
             _snake = snake;
-            _food = new Food() { X = 7, Y = 7 };
+            _food = food;
 
             drawBoard(this);
             drawSnakeHead(_snake);

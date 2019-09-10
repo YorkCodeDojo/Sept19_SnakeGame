@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Snake": {
+      "commandName": "Project",
+      "commandLineArgs": "--demo"
+    }
+  }
+}

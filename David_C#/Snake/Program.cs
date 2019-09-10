@@ -1,14 +1,23 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 
 namespace Snake
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
+            if (args.Contains("--demo"))
+            {
+                var demo = new Demo();
+                demo.Run();
+                return;
+            }
+
             var snake = new Snake(3, 3);
-            var board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard, snake);
+            var food = new Food() { X = 7, Y = 7 };
+            var board = new Board(DrawSnakeHead, RemoveSnakeTail, DrawFood, DrawBoard, snake, food);
 
             while (true)
             {
