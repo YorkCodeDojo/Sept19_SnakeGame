@@ -1,15 +1,19 @@
-# Sept19_SnakeGame
+# Sept19 Snake Game
 
-
-## Thoughts
-
-Try to separate the game logic from the display logic.
-
-Think about the data structure you are going to use to represent the snake.  In your group come up with at least two designs.
 
 ## Tips Getting Started
 
-Write a function which draws the board onto the screen.
+Try to separate the game logic from the display logic (this will make testing easier)
+
+Write a function which draws the empty board onto the screen.
+
+Think about the data structure you are going to use to represent the snake.  In your group come up with at least two designs.
+
+The snake needs to be able to perform the following actions
+    * Change direction
+    * Move forward 1 square in the direction it is currently facing
+    * Grow by one segment
+    * Be able to detect when it has eaten its own tail
 
 Adding the timer to automatically move the snake is quite complicated.  To start with you could allow the user to press bar to move the snake forward.
 
